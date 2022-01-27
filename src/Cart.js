@@ -3,13 +3,20 @@ import './Cart.css';
 import CartItemList from './CartItemList';
 
 class Cart extends React.Component {
+    constructor() {
+        super();
+        this.state = { items: []};
+
+        fetch("items.json")
+            .then(response => response.json())
+            .then(json => {this.setState({ items: json })})
+            .catch(error => console.log(error));
+    }
     render() {
-        let title = "Cart of CSH created in " + new Date().toDateString();
-        let output = <div>
-            <h2>{title}</h2>
-            <CartItemList />
-            </div>;
-        return output;
+        return <div>
+                <h2>Cart</h2>
+                <CartItemList items={this.state.items} />
+            </div>
     }
 }
 
