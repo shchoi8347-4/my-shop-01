@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Catalog from './Catalog';
+import Cart from './Cart';
 
 class App extends Component {
   render() {
@@ -10,6 +11,7 @@ class App extends Component {
           <h1 className="App-title">The Catalog App</h1>
         </header>
         <Catalog />
+        <Cart />
       </div>
     );
   }

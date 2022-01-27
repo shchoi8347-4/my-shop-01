@@ -1,9 +1,14 @@
 import React from 'react';
 import './Cart.css';
+import CartItemList from './CartItemList';
 
 class Cart extends React.Component {
     render() {
-        let output = <div><h2>Cart</h2></div>;
+        let title = "Cart of CSH created in " + new Date().toDateString();
+        let output = <div>
+            <h2>{title}</h2>
+            <CartItemList />
+            </div>;
         return output;
     }
 }
